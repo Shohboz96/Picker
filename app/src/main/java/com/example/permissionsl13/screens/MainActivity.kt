@@ -1,4 +1,4 @@
-package com.example.permissionsl13
+package com.example.permissionsl13.screens
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.permissionsl13.R
 import com.example.permissionsl13.adapter.FileAdapter
 import com.example.permissionsl13.adapter.MediaAdapter
 import com.example.permissionsl13.dialog.CountSizeDialog
