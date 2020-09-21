@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackgroundBorderless"
+    android:descendantFocusability="blocksDescendants"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="3dp"
+    tools:ignore="NewApi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <com.example.permissionsl13.utils.RoundRectCornerImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:foreground="?android:selectableItemBackground"
+            android:src="@drawable/ic_baseline_add_a_photo_24"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:selectableItemBackground"
+        android:src="@drawable/ic_baseline_delete_24"
+        tools:ignore="ContentDescription,NewApi,RtlHardcoded,UnusedAttribute" />
+
+
+
+</FrameLayout>

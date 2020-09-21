@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PermissionsL13</string>
+    <string name="max_count">Max Count</string>
+    <string name="max_size">Max Size</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="image_chooser">Image Chooser</string>
+    <string name="count">Count:</string>
+    <string name="_0">0</string>
+    <string name="ch">/</string>
+    <string name="_20">20</string>
+    <string name="size">Size:</string>
+    <string name="file_chooser">File Chooser</string>
+    <string name="add_file">Add File</string>
+</resources>
