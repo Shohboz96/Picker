@@ -23,6 +23,8 @@ class LocalStorage private constructor(context: Context) {
     var countFile: Int by IntPreference(pref)
     var sizeFile: Float by FloatPreference(pref)
 
+    var dayNight:Boolean by BooleanPreference(pref)
+
     fun clear() {
         pref.edit().clear().apply()
     }

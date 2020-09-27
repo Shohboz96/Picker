@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.permissionsl13.R
@@ -39,13 +40,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        window.statusBarColor = Color.WHITE
+
+        checkNightModeActivated()
 
         list_media.layoutManager = GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false)
         list_media.adapter = mediaAdapter
 
         list_file.layoutManager = LinearLayoutManager(this)
         list_file.adapter = fileAdapter
+
+        switch_button.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if (isChecked){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                saveNightStateMode(true)
+                recreate()
+            }else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                saveNightStateMode(false)
+                recreate()
+            }
+        }
 
         runOnWorkerThread {
             val ls = room.getAllMedia()
@@ -161,6 +175,20 @@ class MainActivity : AppCompatActivity() {
                 openFileGallery()
             }
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    private fun checkNightModeActivated(){
+        if(storage.dayNight){
+            switch_button.isChecked = true
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }else{
+            switch_button.isChecked = false
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+    }
+    private fun saveNightStateMode(nightMode: Boolean) {
+        storage.dayNight = nightMode
     }
 
     private fun getTotalSizeString(ls: List<FileData>, block: (String) -> Unit) {
