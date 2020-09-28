@@ -13,9 +13,17 @@
         android:orientation="vertical"
         android:padding="6dp">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <Switch
+            android:id="@+id/switch_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Night Mode"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:textColor="?attr/white_black_color"
+            android:layout_marginEnd="12dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <TextView
                 android:id="@+id/media_chooser"
@@ -25,25 +33,19 @@
                 android:text="@string/image_chooser"
                 android:textColor="?attr/white_black_color"
                 android:textSize="24sp"
+                android:layout_marginTop="8dp"
                 android:textStyle="bold" />
 
-            <Switch
-                android:id="@+id/switch_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-        </FrameLayout>
+
+
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_media"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-
+            android:layout_marginTop="8dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="3dp"
             app:cardUseCompatPadding="true">
@@ -284,7 +286,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/ch"
-                            android:textColor="@color/black"
+                            android:textColor="?attr/white_black_color"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
